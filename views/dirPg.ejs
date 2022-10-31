@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ph Directory</title>
+
+    <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+    <h2 class="heading">Phone Directory</h2>
+    <form name="entryForm" class="entryForm" action="/add" method="POST">
+        <input type="text" name="userName" placeholder="Enter the Name..." />
+        <input type="number" name="mobile" placeholder="Enter the Phone No..." />
+        <input type="submit" value="Add" />
+    </form>
+
+    <% if(dir.length){ %>
+    <table class="listingTble" border="2px">
+        <div style="text-align: center; font-size: larger;">listing</div> <br/>
+        <tr>
+            <th>User Name</th>
+            <th>Phone No.</th>
+            <th>Action</th>
+        </tr>
+        <% for(var i=0; i<dir.length; i++){ %>
+        <tr>
+            <td style="width: 200px;"><%= dir[i].username %></td>
+            <td style="width: 180px;"><%= dir[i].mobile %></td>
+            <td style="width: 127px; justify-content: center; display: flex;"><button onclick="location.href='/update/<%= dir[i]._id %>'" class="btn">Update</button> <button onclick="location.href='/delete/<%= dir[i]._id %>'" class="btn">Delete</button></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } %>
+</body>
+</html>

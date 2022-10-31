@@ -1,0 +1,29 @@
+.heading{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    text-decoration: underline;
+    color: blue;
+    text-transform: uppercase;
+}
+
+.entryForm, .updateForm{
+    justify-content: center;
+    display: flex;
+    margin: 50px auto;
+}
+
+.entryForm input{
+    padding: 5px;
+    margin: 5px;
+}
+
+.listingTble{
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    margin: auto 30%;
+}
+
+.btn{
+    margin: 4px;
+}
